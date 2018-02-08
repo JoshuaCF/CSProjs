@@ -38,8 +38,6 @@ public class Heather {
 			base1 = input.next();
 			value2 = input.next();
 			base2 = input.next();
-			
-			System.out.println(toBaseTen(value1, stringToInt(base1), letterValue));
 		}
 		
 		input.close();
@@ -51,8 +49,8 @@ public class Heather {
 		for(int length = value.length(); length > 0; length--) {
 			splitString.add(value.substring(length - 1, length));
 		}
-		for(int iteration = 0; 0 < (splitString.size() - 1); iteration++) {
-			base10 += stringToIntMap(splitString.get(iteration), map) * (base ^ (iteration));
+		for(int iteration = 0; iteration < (splitString.size()); iteration++) {
+			base10 += stringToIntMap(splitString.get(iteration), map) * (Math.pow(base, iteration));
 		}
 		
 		return base10;
